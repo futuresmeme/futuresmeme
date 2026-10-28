@@ -1,0 +1,20 @@
+[profile.default]
+src = "contracts"
+test = "test"
+script = "script"
+out = "out"
+libs = ["lib"]
+solc_version = "0.8.24"
+evm_version = "paris"
+optimizer = true
+optimizer_runs = 200
+via_ir = false
+fs_permissions = [{ access = "read-write", path = "./samples" }]
+remappings = ["@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/", "forge-std/=lib/forge-std/src/"]
+
+[rpc_endpoints]
+bsc = "${BSC_RPC_URL}"
+bsc_testnet = "${BSC_TESTNET_RPC_URL}"
+
+[fuzz]
+runs = 256
